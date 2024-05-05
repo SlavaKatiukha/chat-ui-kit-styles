@@ -17,7 +17,7 @@
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   height: 15px;
   // there must be 'bottom' or 'top' for ps__rail-x
-  bottom: 0px;
+  bottom: 0;
   // please don't change 'position'
   position: absolute;
 }
@@ -59,14 +59,13 @@
 .ps .ps__rail-y:focus,
 .ps .ps__rail-x.ps--clicking,
 .ps .ps__rail-y.ps--clicking {
-  background-color: #eee;
-  background-color: $color-primary-light;
+  background-color: var(--scrollbar-track-avtive-color);
   opacity: 0.9;
 }
 
 // Scrollbar thumb styles
 .ps__thumb-x {
-  background-color: $color-primary-dark;
+  background-color: var(--scrollbar-thumb-color);
   border-radius: 6px;
   transition: background-color .2s linear, height .2s ease-in-out;
   -webkit-transition: background-color .2s linear, height .2s ease-in-out;
@@ -78,11 +77,12 @@
 }
 
 .ps__thumb-y {
-  background-color: $color-primary;
-  border-radius: 6px;
+  background-color: var(--scrollbar-thumb-color);
+  //## background-color: $color-primary;
+  border-radius: 2px;
   transition: background-color .2s linear, width .2s ease-in-out;
   -webkit-transition: background-color .2s linear, width .2s ease-in-out;
-  width: 6px;
+  width: 4px;
   // there must be 'right' for ps__thumb-y
   right: 2px;
   // please don't change 'position'
@@ -92,14 +92,16 @@
 .ps__rail-x:hover > .ps__thumb-x,
 .ps__rail-x:focus > .ps__thumb-x,
 .ps__rail-x.ps--clicking .ps__thumb-x {
-  background-color: $color-primary;
+  background-color: var(--scrollbar-thumb-color);
+  //## background-color: $color-primary;
   height: 11px;
 }
 
 .ps__rail-y:hover > .ps__thumb-y,
 .ps__rail-y:focus > .ps__thumb-y,
 .ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: $color-primary;
+  background-color: var(--scrollbar-thumb-color);
+  //## background-color: $color-primary;
   width: 11px;
 }
 

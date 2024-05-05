@@ -1,7 +1,7 @@
 @import "../variables";
 
 .#{$prefix}-button {
-  
+
   // Local alias
   $button-class: &;
 
@@ -22,23 +22,24 @@
   &:focus {
     outline:none;
   }
-  
+
   &:disabled {
     opacity: $button-disabled-opacity;
   }
-  
+
   &:not(:disabled) {
     cursor:pointer;
   }
 
   &#{$button-class}--border {
-    border: $button-border;  
+    border: $button-border;
   }
-  
+
   &:hover:not(:disabled) {
-    opacity: $button-hover-opacity;
+    //## opacity: $button-hover-opacity;
+    color: $button-active-bg-color; //##
   }
-  
+
   &#{$button-class}--right {
     > svg[data-icon]:first-child {
       margin-right:0.5em;
@@ -55,7 +56,7 @@
     color: $button-adduser-color;
     background-color: $button-adduser-bg-color;
   }
-  
+
   &--arrow {
     color: $button-arrow-color;
     background-color: $button-arrow-bg-color;
@@ -65,7 +66,7 @@
     color: $button-ellipis-color;
     background-color: $button-ellipis-bg-color;
   }
-  
+
   &--info {
     color: $button-info-color;
     background-color: $button-info-bg-color;
@@ -80,7 +81,7 @@
     color: $button-videocall-color;
     background-color: $button-videocall-bg-color;
   }
-  
+
   &--voicecall {
     color: $button-voicecall-color;
     background-color: $button-voicecall-bg-color;
@@ -95,6 +96,6 @@
     color: $button-attachment-color;
     background-color: $button-attachment-bg-color;
   }
-  
+
 }
 

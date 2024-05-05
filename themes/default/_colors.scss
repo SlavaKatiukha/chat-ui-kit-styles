@@ -1,0 +1,86 @@
+:root {
+  --light-gray1: #F5F7FB;
+  --light-gray2: #32363D;
+  --light-gray2-semi-transparent: rgb(50 54 61 / 50%);
+  --light-gray3: #E7E8E9;
+  --light-gray4: #E1E4E8;
+  --light-white: #FFFFFF;
+  --light-blue: #468EF0;
+  --light-red: #EB4D3D;
+
+  --dark-gray1: #17191C;
+  --dark-gray2: #24272C;
+  --dark-gray3: #363940;
+  --dark-gray4: #494E57;
+  --dark-red: #EB4D3D;
+  --dark-white: #FFFFFF;
+  --dark-gray-text: #D4D4D4;
+  --dark-gray-text2: #797979;
+  --dark-yellow: #F8CC46;
+}
+
+.light-theme {
+  --default-bg-color: var(--light-white);
+  --color-bg-hover: var(--light-gray1);
+  --default-border-color: #E5E5E5;
+  --color-text: var(--light-gray2);
+  --color-text-title: var(--light-gray2);
+  --color-text-info: var(--light-gray2-semi-transparent);
+  --color-text-empty: var(--light-gray2-semi-transparent);
+  --color-text-header: var(--light-gray2);
+  --color-text-footer: var(--light-gray2);
+  --color-text-operation: var(--light-gray2);
+  --color-text-operation-hover: var(--dark-gray-text);
+  --color-primary: var(--light-gray1);
+  --color-secondary: var(--light-gray1);
+  --main-container-border-color: var(--light-gray3);
+  --button-color: var(--light-gray2);
+  --button-active-color: var(--light-blue);
+  --message-outgoing-color: var(--light-gray2);
+  --message-outgoing-bg-color: #E6E7E8;
+  --scrollbar-thumb-color: var(--light-gray2);
+  --scrollbar-track-avtive-color: rgba(0, 0, 0, 0.03);
+  --widget-shadow-color: rgb(0, 0, 0, .12);
+  --recording-color: var(--light-red);
+  --recording-duration-color: var(--light-gray2);
+  --mic-active-shadow-color: rgba(0, 0, 0, .1);
+  --mic-leave-shadow-color: rgba(235, 77, 61, .7);
+  --sidebar-menu-bg-color: var(--light-white);
+  --sidebar-menu-item-color: var(--light-gray2);
+  --sidebar-menu-item-bg-color: var(--light-gray1);
+  --sidebar-menu-icon-bg-color: var(--light-gray4);
+  --sidebar-menu-option-icon-bg-color: var(--light-gray4);
+}
+
+.dark-theme {
+  --default-bg-color: var(--dark-gray2);
+  --color-bg-hover: #1A1C1F;
+  --default-border-color: var(--dark-gray1);
+  --color-text: var(--dark-gray-text);
+  --color-text-title: var(--dark-white);
+  --color-text-info: var(--dark-gray-text2);
+  --color-text-empty: var(--dark-gray-text2);
+  --color-text-header: var(--dark-gray-text2);
+  --color-text-footer: var(--dark-gray-text2);
+  --color-text-operation: var(--dark-gray-text2);
+  --color-text-operation-hover: var(--dark-gray-text);
+  --color-primary: var(--dark-gray3);
+  --color-secondary: var(--dark-gray1);
+  --main-container-border-color: var(--dark-gray3);
+  --button-color: var(--dark-white);
+  --button-active-color: var(--dark-yellow);
+  --message-outgoing-color: var(--dark-gray-text);
+  --message-outgoing-bg-color: var(--dark-gray3);
+  --scrollbar-thumb-color: var(--dark-white);
+  --scrollbar-track-avtive-color: rgba(255, 255, 255, .06);
+  --widget-shadow-color: rgb(255, 255, 255, .08);
+  --recording-color: var(--dark-red);
+  --recording-duration-color: var(--dark-white);
+  --mic-active-shadow-color: rgba(255, 255, 255, .1);
+  --mic-leave-shadow-color: rgba(235, 77, 61, .7);
+  --sidebar-menu-bg-color: var(--dark-gray1);
+  --sidebar-menu-item-color: var(--light-white);
+  --sidebar-menu-item-bg-color: var(--dark-gray2);
+  --sidebar-menu-icon-bg-color: var(--dark-gray4);
+  --sidebar-menu-option-icon-bg-color: var(--dark-gray2);
+}
