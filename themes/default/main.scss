@@ -1,4 +1,6 @@
 @charset "utf-8";
+
+@import "colors";
 @import "helpers/functions";
 @import "components/main-container";
 @import "components/message";
@@ -23,3 +25,5 @@
 @import "components/overlay";
 @import "components/status-list";
 @import "components/perfect-scrollbar";
+@import "components/widget/sidebar-menu";
+@import "components/widget/message-input";

@@ -1,9 +1,9 @@
 {
-  "name": "@chatscope/chat-ui-kit-styles",
+  "name": "@ravatar-ai/chat-ui-kit-styles",
   "version": "1.4.0",
-  "description": "SCSS themes for @chatscope/chat-ui-kit-react library",
+  "description": "SCSS themes for @ravatar/chat-ui-kit-react library (a fork of @chatscope/chat-ui-kit-styles)",
   "license": "MIT",
-  "homepage": "https://chatscope.io/",
+  "homepage": "https://ravatar.com/",
   "keywords": [
     "chat",
     "styles",
@@ -25,22 +25,25 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/chatscope/chat-ui-kit-styles.git"
+    "url": "https://github.com/RAVATAR-AI/chat-ui-kit-styles.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/cli": "7.23.0",
+    "rollup-plugin-terser": "5.3.1"
+  },
   "devDependencies": {
-    "@commitlint/cli": "11.0.0",
+    "@commitlint/cli": "^18.4.2",
     "@commitlint/config-conventional": "11.0.0",
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/git": "9.0.0",
-    "@semantic-release/github": "7.1.1",
-    "autoprefixer": "9.8.6",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "9.2.6",
+    "autoprefixer": "^10.4.17",
     "chokidar-cli": "3.0.0",
-    "husky": "4.3.0",
+    "husky": "^4.3.8",
     "npm-run-all": "4.1.5",
-    "postcss-cli": "7.1.2",
+    "postcss-cli": "^11.0.0",
     "sass": "1.39.2",
-    "semantic-release": "17.2.4"
+    "semantic-release": "23.0.2"
   },
   "scripts": {
     "build:clean": "rm -Rf dist",
@@ -48,7 +51,8 @@
     "build:sass": "node ./scripts/build-all",
     "build": "npm-run-all -s build:clean build:sass build:autoprefixer",
     "pack": "yarn pack",
-    "watch": "chokidar 'themes/**/*.scss' -c 'npm-run-all -s build:sass build:autoprefixer'"
+    "watch": "chokidar 'themes/**/*.scss' -c 'npm-run-all -s build:sass build:autoprefixer'",
+    "prepare": "npm run build"
   },
   "husky": {
     "hooks": {
