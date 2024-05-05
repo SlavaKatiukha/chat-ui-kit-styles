@@ -7,12 +7,13 @@
   font-family: $typing-indicator-font-family;
   @include flex-row;
   align-items: stretch;
-  
+
   &__indicator {
     box-sizing: inherit;
     background-color: $typing-indicator-indicator-bg-color;
     @include flex-row;
     align-items: center;
+    margin-left: 0.4em;
   }
 
   &__dot {
@@ -23,6 +24,7 @@
     height: $typing-indicator-dot-size;
     width: $typing-indicator-dot-size;
     background-color: $typing-indicator-dot-bg-color;
+    margin-top: 0.4em;
   }
 
   &__dot:not(:last-child) {

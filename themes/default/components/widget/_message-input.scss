@@ -1,0 +1,35 @@
+@import "../../variables";
+@import "../../helpers/mixins";
+
+.#{$widgetPrefix}-message-input {
+
+  // Local alias
+  $message-input-class: &;
+
+  @include flex-row;
+  background-color: $message-input-bg-color;
+
+  .#{$prefix}-message-input {
+    border: none;
+    flex-grow: 1;
+    padding-left: .625em;
+  }
+
+  &__tools {
+    @include flex-row;
+    box-sizing: border-box;
+
+    .#{$widgetPrefix}-button__send {
+      position: absolute;
+      width: 3.3em;
+      border-radius: 50%;
+      height: 3.3em;
+      margin: 0.5em 0.5em 0 -4em;
+      padding-top: 0.25em;
+    }
+
+    .#{$widgetPrefix}-button__send--mic-active {
+      box-shadow: 1px 1px 5px var(--mic-active-border-size) var(--mic-active-shadow-color);
+    }
+  }
+}

@@ -2,10 +2,11 @@
 @import "../helpers/mixins";
 
 .#{$prefix}-conversation-header {
-  
+
   $class-name: &;
-  
+
   box-sizing: border-box;
+  height: $conversation-header-height; //##
   color: $conversation-header-color;
   background-color: $conversation-header-bg-color;
   font-family: $conversation-header-font-family;
@@ -13,29 +14,31 @@
   flex-shrink: 0;
   user-select: none;
   //box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.38);
-  
+
   @include flex-row;
   align-items: stretch;
   border-top: $conversation-header-border-top;
   border-right: $conversation-header-border-right;
   border-bottom: $conversation-header-border-bottom;
   border-left: $conversation-header-border-left;
-  padding: 0.6em 0.9em;
+  padding: 0.4em 0.9em; //##
 
   &__back {
     box-sizing: border-box;
-    margin-right:0.5em;
+    //## margin-right:0.5em;
+    margin-left: 1.6em; //##
+    margin-top: .5em; //##
     @include flex-row;
     align-items: center;
     cursor: pointer;
     order: 1;
-    
+
     button {
       font-size: 1.4em;
       padding:0;
     }
   }
-  
+
   &__avatar {
     box-sizing: border-box;
     width: $avatar-md-width;
@@ -58,16 +61,20 @@
 
   &__content {
     box-sizing: border-box;
-    @include flex-column;
+    //## @include flex-column;
+    @include flex-row;
     order: 3;
     flex-grow: 2;
-    justify-content: center;
+    justify-content: flex-start; //##
+    align-items: center; //##
+    margin-left: 1.6em; //##
     min-width: $conversation-header-content-min-width; // Required for ellipsis in child elements
-    
+
     #{$class-name}__user-name {
       box-sizing: border-box;
       @include text-truncate;
-      font-weight: bold;
+      font-weight: 600; //##
+      font-size: 1.125em; //##
       color: $conversation-header-user-name-color;
       background-color: $conversation-header-user-name-bg-color;
     }
@@ -78,11 +85,13 @@
       color: $conversation-header-info-color;
       background-color: $conversation-header-info-bg-color;
       font-weight: normal;
-      font-size: 0.9em;
+      font-size: .875em; //##
+      margin-top: .3em; //##
+      margin-left: .7em; //##
     }
-    
+
   }
-  
+
   &__actions {
     box-sizing: border-box;
     @include flex-row;
@@ -92,13 +101,13 @@
     margin: $conversation-header-actions-margin;
     order: 4;
     .#{$prefix}-button:not(:first-child) {
-      margin-left:0.2em;
+      margin-left: 1.5625em; //##
     }
-    
+
     .#{$prefix}-button {
       padding:0;
     }
-    
+
     .#{$prefix}-button.#{$prefix}-button--arrow,
     .#{$prefix}-button.#{$prefix}-button--info,
     .#{$prefix}-button.#{$prefix}-button--voicecall,
@@ -115,8 +124,8 @@
     .#{$prefix}-button.#{$prefix}-button--ellipsis {
       font-size: 1.3em;
     }
-    
+
   }
-  
-  
+
+
 }

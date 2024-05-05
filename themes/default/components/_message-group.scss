@@ -7,7 +7,7 @@ $_message-group-avatar-justify-content: flex-end;
 
 /********** Styles **********/
 .#{$prefix}-message-group {
-  
+
   // Local alias
   $group-class: &;
   $message-class: #{$prefix}-message;
@@ -16,19 +16,20 @@ $_message-group-avatar-justify-content: flex-end;
   box-sizing: border-box;
   @include flex-row;
   margin: $message-group-margin;
-  
+
   &__avatar {
     box-sizing: border-box;
     @include flex-column;
     justify-content: $_message-group-avatar-justify-content;
+    margin-bottom: 2.1em;
   }
-  
+
   // Container for header, message and footer
   &__content {
     box-sizing: border-box;
     @include flex-column;
   }
-  
+
   &__header {
     box-sizing: border-box;
     display:flex;
@@ -39,7 +40,7 @@ $_message-group-avatar-justify-content: flex-end;
     margin: $message-group-header-margin;
     padding: $message-group-header-padding;
   }
-  
+
   &__footer {
     box-sizing: border-box;
     display:flex;
@@ -50,7 +51,7 @@ $_message-group-avatar-justify-content: flex-end;
     margin: $message-group-footer-margin;
     padding: $message-group-footer-padding;
   }
-  
+
   &__messages {
     box-sizing: border-box;
     // First message in group
@@ -61,18 +62,21 @@ $_message-group-avatar-justify-content: flex-end;
     // Every message in group
     .#{$prefix}-message {
       .#{$message-class}__content {
-        background-color: $message-group-message-content-bg-color;
+        /*##*/
+        background: $message-group-message-content-bg-color;
+        border-radius: 10px;
+        /*##*/
         margin-top:0;
       }
     }
-    
+
     // Last message in group
     .#{$prefix}-message:last-child {
 
     }
 
   }
-  
+
   // Modifier - group of incoming messages
   &--incoming {
     justify-content: flex-start;
@@ -81,13 +85,13 @@ $_message-group-avatar-justify-content: flex-end;
       margin-right: 8px;
       order: 0;
     }
-    
+
     & #{$group-class}__content {
       order:1;
     }
-    
+
     & #{$group-class}__messages {
-      
+
       // First message in incoming group
       & .#{$message-class}:first-child .#{$message-class}__content {
         border-radius: $message-group-incoming-message-content-first-border-radius;
@@ -97,9 +101,9 @@ $_message-group-avatar-justify-content: flex-end;
       & .#{$message-class} .#{$message-class}__content {
         border-radius: $message-group-incoming-message-content-border-radius;
         color: $message-group-message-content-incoming-color;
-        background-color: $message-group-message-content-incoming-bg-color;
+        //## background-color: $message-group-message-content-incoming-bg-color;
       }
-      
+
       // Last message in incoming group
       & .#{$message-class}:last-child .#{$message-class}__content {
         border-radius: $message-group-incoming-message-content-last-border-radius;
@@ -110,7 +114,7 @@ $_message-group-avatar-justify-content: flex-end;
       .#{$prefix}-message:only-child .#{$message-class}__content {
         border-radius: $message-group-incoming-message-content-single-border-radius;
       }
-      
+
     }
     
   }
@@ -119,7 +123,7 @@ $_message-group-avatar-justify-content: flex-end;
   &--outgoing  {
     justify-content: flex-end;
     margin-left: auto;
-    
+
     & #{$group-class}__avatar {
       margin-left: 8px;
       order: 1;
@@ -134,7 +138,7 @@ $_message-group-avatar-justify-content: flex-end;
       & .#{$message-class} {
         justify-content: flex-end;
       }
-      
+
       // First message in outgoing group
       & .#{$message-class}:first-child .#{$message-class}__content {
         border-radius: $message-group-outgoing-message-content-first-border-radius;
@@ -160,19 +164,19 @@ $_message-group-avatar-justify-content: flex-end;
 
     }
   }
-  
+
   // Avatar position
   // By default incoming and default message has avatar on left and outgoing has avatar on right.
   // This can be changed by adding --avatar-left or avatar-right modifier
   &--avatar-tl {
-    
+
     #{$group-class}__avatar {
       justify-content: flex-start;
       order:0;
       margin-right: $message-group-avatar-horizontal-margin;
       margin-left:0;
     }
-    
+
     #{$group-class}__content {
       order:1;
     }
@@ -211,14 +215,14 @@ $_message-group-avatar-justify-content: flex-end;
       margin-left: $message-group-avatar-horizontal-margin;
       margin-right:0;
     }
-    
+
     #{$group-class}__content {
       order:0;
     }
   }
 
   &--avatar-cl {
-    
+
     #{$group-class}__avatar {
       justify-content: center;
       order:0;
@@ -243,5 +247,5 @@ $_message-group-avatar-justify-content: flex-end;
       order:0;
     }
   }
-  
+
 }

@@ -2,26 +2,20 @@
 @import "../helpers/mixins";
 
 .#{$prefix}-avatar {
-  
+
   $avatar-class: &;
-  
+
   position: relative;
   width: $avatar-md-width;
   height: $avatar-md-width;
   border-radius: 50%;
   box-sizing: border-box;
-  
+
   & > img {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-  }
-
-  &:hover {
-    > img {
-      filter: brightness(115%);
-    }
   }
 
   &#{&}--xs {
@@ -37,7 +31,7 @@
     min-width: $avatar-sm-width;;
     min-height: $avatar-sm-width;
   }
-  
+
   &#{&}--md
   {
     width: $avatar-md-width;
@@ -49,11 +43,38 @@
   &#{&}--lg {
     width: $avatar-lg-width;
     height: $avatar-lg-width;
-    min-width: $avatar-lg-width;;
+    min-width: $avatar-lg-width;
     min-height: $avatar-lg-width;
+    /*##*/
+    border-radius: 50% 50% 4px;
+    box-sizing: border-box;
+    border: 20px solid white;
+    background: white;
+    box-shadow: 0 0 16px 0 #0000003D;
+    /*##*/
   }
-  
-    &#{&}--fluid {
+  /*##*/
+  &#{&}--lg > img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -10px;
+    left: -10px;
+    transition: width .03s, height .03s, margin .03s;
+    margin: 0;
+  }
+
+  &#{&}--lg:hover {
+    > img {
+      width: 108px;
+      height: 108px;
+      margin: -4px;
+      filter: none;
+    }
+  }
+  /*##*/
+
+  &#{&}--fluid {
     width: $avatar-fluid-width;
     height: $avatar-fluid-width;
     .#{$prefix}-status {
@@ -62,14 +83,14 @@
       height: 22%
     }
   }
-  
+
   // Status position and size
   & .#{$prefix}-status {
     box-sizing: border-box;
     position: absolute;
     right:-1px;
     bottom: 3%;
-    
+
     &__bullet  {
       box-sizing: content-box;
       border: solid 2px #fff;
@@ -77,41 +98,41 @@
 
     $status-class: #{$prefix}-status;
     $bullet-class: #{$prefix}-status__bullet;
-    
+
     &--xs,
     &--xs:not(.#{$status-class}--named) {
-      
+
       @include status-size("xs", 1);
       right: 0;
       bottom: 0;
-      
+
     }
 
     &--sm,
     &--sm:not(.#{$status-class}--named) {
-      
+
       @include status-size("sm", 2);
-      
+
       right: -3px;
       bottom: -1px;
     }
-    
+
     &--md,
     &--md:not(.#{$status-class}--named) {
       @include status-size("md", 2);
     }
 
-    &--lg,  
+    &--lg,
     &--lg:not(.#{$status-class}--named) {
 
       @include status-size("lg", 2);
       bottom:4%;
-      
+
     }
-    
+
   }
-  
+
   &#{$avatar-class}--active {
-    
+
   }
 }

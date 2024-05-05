@@ -10,7 +10,7 @@ $_conversation-unread-right: 0.8em;
 .#{$prefix}-conversation {
 
   $class-name: &;
-  
+
   @include flex-row;
   box-sizing: border-box;
   position: relative;
@@ -28,7 +28,7 @@ $_conversation-unread-right: 0.8em;
 
   &:hover {
     background-color: $conversation-hover-bg-color;
-    
+
     > .#{$prefix}-avatar {
       > .#{$prefix}-status {
         > .#{$prefix}-status__bullet {
@@ -41,18 +41,18 @@ $_conversation-unread-right: 0.8em;
     & > .#{$prefix}-avatar > img {
       filter: none;
     }
-    
+
   }
-  
+
   &#{&}:active {
-    
+
     color: $conversation-active-color;
     background-color: $conversation-active-bg-color;
     border-top: $conversation-active-border-top;
     border-right: $conversation-active-border-right;
     border-bottom: $conversation-active-border-bottom;
     border-left: $conversation-active-border-left;
-    
+
     > .#{$prefix}-avatar {
       > .#{$prefix}-status {
         > .#{$prefix}-status__bullet {
@@ -60,11 +60,11 @@ $_conversation-unread-right: 0.8em;
         }
       }
     }
-    
+
   }
 
   &#{&}--active {
-    
+
     color: $conversation-name-activated-color;
     background-color: $conversation-activated-bg-color;
     font-weight: $conversation-activated-font-weight;
@@ -72,7 +72,7 @@ $_conversation-unread-right: 0.8em;
     border-right: $conversation-activated-border-right;
     border-bottom: $conversation-activated-border-bottom;
     border-left: $conversation-activated-border-left;
-    
+
     > .#{$prefix}-avatar {
       > .#{$prefix}-status {
         > .#{$prefix}-status__bullet {
@@ -85,25 +85,25 @@ $_conversation-unread-right: 0.8em;
       color: $conversation-name-activated-color;
       font-weight: $conversation-name-activated-font-weight;
     }
-    
+
     #{$class-name}__info {
       color: $conversation-info-activated-color;
       font-weight: $conversation-info-activated-font-weight;
     }
-    
+
   }
-  
+
   > .#{$prefix}-avatar {
     width: $avatar-md-width + 0.1px;
     height: $avatar-md-width + 0.1px;
     margin-right: 1em;
-    
+
     > .#{$prefix}-status {
-      
+
       border-color: $conversation-bg-color;
-      
+
     }
-    
+
   }
 
   > .#{$prefix}-avatar-group {
@@ -122,22 +122,24 @@ $_conversation-unread-right: 0.8em;
     margin-right: 1.1em;
     flex-grow:1;
   }
-  
+
   &__operations {
     box-sizing: border-box;
     @include flex-row;
     align-items: center;
     margin: $conversation-operations-margin;
-    color: lighten($color-text, 70);
+    //## color: lighten($color-text, 70);
+    color: var(--color-text-operation);
     visibility: hidden;
   }
 
   &__operations--visible {
     visibility: visible;
   }
-  
+
   &__operations:hover {
-    color: lighten($color-text, 40);
+    //## color: lighten($color-text, 40);
+    color: var(--color-text-operation-hover);
   }
 
   &:hover &__operations {
@@ -177,11 +179,11 @@ $_conversation-unread-right: 0.8em;
     @include flex-row;
     align-items: center;
   }
-  
+
   &__last-activity-time + &__operations {
     margin-left:0.5em;
   }
-  
+
   &__unread-dot {
     box-sizing: content-box;
     @include flex-row;
@@ -202,11 +204,11 @@ $_conversation-unread-right: 0.8em;
                     lighten($conversation-unread-dot-color, 17),
                     $conversation-unread-dot-color
     );
-    
+
   }
 
   &__unread-dot {
-    
+
     &:hover::before {
       content: "";
       position: absolute;
@@ -230,7 +232,7 @@ $_conversation-unread-right: 0.8em;
 
       transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
     }
-    
+
     &:hover::after {
       content: "";
       position: absolute;
@@ -256,9 +258,9 @@ $_conversation-unread-right: 0.8em;
 
       animation: #{$prefix}-unread-anim 2s ease-out infinite;
     }
-    
+
   }
-  
+
   // Without max width text will not be truncated
   &__unread {
     box-sizing: border-box;
@@ -274,13 +276,13 @@ $_conversation-unread-right: 0.8em;
     max-width: 40 * $conversation-unread-font-size;
     @include text-truncate;
     z-index:100; /* For grouped Avatar */
-    
+
   }
 
   &__unread:hover::before {
-    
+
   }
-  
+
   @keyframes #{$prefix}-unread-anim {
     0% {
       transform: scale(1);
@@ -302,5 +304,5 @@ $_conversation-unread-right: 0.8em;
       transform: scale(1);
     }
   }
-  
+
 }

@@ -11,7 +11,7 @@
   color: $main-container-color;
   background-color: $main-container-bg-color;
   font-size: $main-container-font-size;
-  
+
   & > .#{$prefix}-conversation-list {
     order: 0;
     height: 100%;
@@ -45,13 +45,13 @@
     border-right: $main-container-sidebar-right-border-right;
     border-bottom: $main-container-sidebar-right-border-bottom;
     border-left: $main-container-sidebar-right-border-left;
-    
+
   }
-  
+
   & > .#{$prefix}-sidebar.#{$prefix}-sidebar--left .#{$prefix}-search {
     margin:0.5em;
   }
-  
+
   & .#{$prefix}-chat-container {
     order:1;
     z-index:1;
@@ -59,7 +59,7 @@
     flex-basis: 65%;
     border-right: $main-container-chat-container-border-right;
   }
-  
+
   & .#{$prefix}-sidebar {
     order:2;
     height:100%;
@@ -78,69 +78,69 @@
   & .#{$prefix}-sidebar .#{$prefix}-expansion-panel:nth-last-child(3) {
     border-bottom: 0;
   }
-  
+
   & .#{$prefix}-conversation-header {
     z-index: 1;
   }
 
-  
+
   /////////////////////////////////////////////////////////////
   /// Responsive
   &--responsive {
 
     .#{$prefix}-chat-container {
-      
+
       .#{$prefix}-conversation-header {
         .#{$prefix}-conversation-header__back {
           display: none;
         }
-  
+
         .#{$prefix}-conversation-header__actions {
           .#{$prefix}-button--info {
             display: none;
           }
         }
-        
+
       }
     }
-    
+
     @media( max-width: map-get($grid-breakpoints, md) ) {
-      
+
       min-width: calc( 1.6em + 40px + #{$chat-container-min-width} );  // Horizontal padding from conversation-list plus avatar width plus ChatContainer min-width
-      
+
       .#{$prefix}-search {
         display:none;
       }
-  
+
       > .#{$prefix}-sidebar.#{$prefix}-sidebar--left {
         flex-basis: calc(1.6em + 40px); // Horizontal padding from conversation-list plus avatar width
         min-width: calc(1.6em + 40px);
       }
-  
+
       >.#{$prefix}-sidebar.#{$prefix}-sidebar--right {
         display: none;
       }
-      
+
       > .#{$prefix}-conversation-list { // Only if conversation-list is direct child of main-container because main-container and conversation-list have different flex-direction
         flex-basis: calc(1.6em + 40px); // Horizontal padding from conversation-list plus avatar width
       }
-  
+
       .#{$prefix}-conversation-list,
       .#{$prefix}-sidebar .#{$prefix}-conversation-list {
-  
+
         .#{$prefix}-conversation {
           > .#{$prefix}-avatar {
             margin-right:0; // Reset right margin
           }
-  
+
           &__content {
             display:none;
           }
-  
+
           &__operations {
             display:none;
           }
-          
+
           &__last-activity-time {
             display: none;
           }
@@ -160,15 +160,15 @@
             display: flex;
           }
         }
-        
+
       }
-      
+
     }
-  
+
     @media( max-width: map-get($grid-breakpoints, sm) ) {
 
       min-width: auto;
-      
+
       > .#{$prefix}-sidebar.#{$prefix}-sidebar--left {
         display:none;
       }
@@ -180,19 +180,19 @@
           .#{$prefix}-conversation-header__back {
             display: flex;
           }
-  
+
           .#{$prefix}-conversation-header__info {
-            
+
           }
-          
+
         }
       }
-      
-      
-      
+
+
+
     }
   }
-  
+
 /////////////////////////////////////////////////////////////
-  
+
 }
