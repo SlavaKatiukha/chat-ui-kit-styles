@@ -1,4 +1,4 @@
-# @chatscope/chat-ui-kit-styles changelog
+# @ravatar/chat-ui-kit-styles (a fork of @chatscope/chat-ui-kit-styles) changelog 
 
 # [1.4.0](https://github.com/chatscope/chat-ui-kit-styles/compare/v1.3.0...v1.4.0) (2022-08-12)
 

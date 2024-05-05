@@ -24,9 +24,10 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
 
   // Local alias
   $message-input-class: &;
-  
+
   @include flex-row;
   position: relative;
+  height: $message-input-height;
   background-color: $message-input-bg-color;
   border-top: $message-input-border-top;
   border-right: $message-input-border-right;
@@ -38,7 +39,7 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
   flex-shrink: 0;
 
   &__content-editor-wrapper {
-    box-sizing: border-box;  
+    box-sizing: border-box;
     position: relative;
     background-color: $message-input-content-editor-wrapper-bg-color;
     margin: $message-input-content-editor-wrapper-margin;
@@ -50,9 +51,9 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
       background-color: $message-input-content-editor-disabled-bg-color;
       color: $message-input-content-editor-disabled-color;
     }
-    
+
   }
-  
+
   &__content-editor-container {
     box-sizing: border-box;
     position:relative;
@@ -67,13 +68,13 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
     max-height: $_message-input-content-editor-container-max-height;
     padding: $message-input-content-editor-container-padding;
     scroll-padding: $message-input-content-editor-container-padding-bottom;
-    
+
     #{$message-input-class}--disabled & {
       color: $message-input-content-editor-disabled-color;
       background-color: transparent;
     }
   }
-  
+
   &__content-editor {
     box-sizing: border-box;
     flex-grow:1;
@@ -92,9 +93,9 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
       background-color: transparent; // Because bg color is from parent and we are using alpha
       color: $message-input-content-editor-disabled-color;
     }
-    
+
   }
-  
+
   &__content-editor[data-placeholder]:empty:before {
     box-sizing: border-box;
     content: attr(data-placeholder);
@@ -102,16 +103,17 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
     display: block;
     cursor:text;
   }
-  
+
   &__tools {
     @include flex-row;
     box-sizing: border-box;
     .#{$prefix}-button {
       font-size:1.2em;
       margin-top:0;
-      margin-bottom:0;
+      //## margin-bottom:0;
+      margin-bottom: 0.35em;
     }
-    
+
     .#{$prefix}-button--send {
       align-self: flex-end;
     }
@@ -119,7 +121,7 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
     .#{$prefix}-button--attachment {
       align-self: flex-end;
     }
-    
+
   }
 
   &__tools:first-child {
@@ -136,8 +138,9 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
       margin-left: 0;
     }
     .#{$prefix}-button:last-child {
-      margin-right: 0;
+      //## margin-right: 0;
+      margin-right: 0.5em;
     }
   }
-  
+
 }
