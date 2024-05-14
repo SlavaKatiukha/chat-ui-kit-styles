@@ -50,6 +50,8 @@
   --sidebar-menu-item-bg-color: var(--light-gray1);
   --sidebar-menu-icon-bg-color: var(--light-gray4);
   --sidebar-menu-option-icon-bg-color: var(--light-gray4);
+  --tooltip-color: var(--light-white);
+  --tooltip-bg-color: var(--light-gray2);
 }
 
 .dark-theme {
@@ -83,4 +85,6 @@
   --sidebar-menu-item-bg-color: var(--dark-gray2);
   --sidebar-menu-icon-bg-color: var(--dark-gray4);
   --sidebar-menu-option-icon-bg-color: var(--dark-gray2);
+  --tooltip-color: var(--dark-gray-text);
+  --tooltip-bg-color: var(--dark-gray1);
 }
