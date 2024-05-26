@@ -28,6 +28,7 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
   @include flex-row;
   position: relative;
   height: $message-input-height;
+  min-height: $message-input-min-height;
   background-color: $message-input-bg-color;
   border-top: $message-input-border-top;
   border-right: $message-input-border-right;

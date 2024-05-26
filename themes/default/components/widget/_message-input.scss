@@ -27,8 +27,8 @@
       border-radius: 50%;
       height: 3.3em;
       margin: 0.5em 0.5em 0 -4em;
-      padding-top: 0.25em;
-    }
+      bottom: 0.6em;
+    } 
 
     .#{$widgetPrefix}-button__send--mic-active {
       box-shadow: 1px 1px 5px var(--mic-active-border-size) var(--mic-active-shadow-color);
