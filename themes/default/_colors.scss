@@ -1,5 +1,6 @@
 :root {
   --light-gray1: #F5F7FB;
+  --light-gray1-semi-transparent: rgb(245 247 251 / 50%);
   --light-gray2: #32363D;
   --light-gray2-semi-transparent: rgb(50 54 61 / 50%);
   --light-gray3: #E7E8E9;
@@ -11,6 +12,7 @@
   --dark-gray1: #17191C;
   --dark-gray2: #24272C;
   --dark-gray3: #363940;
+  --dark-gray3-semi-transparent: rgb(54 57 64 / 50%);
   --dark-gray4: #494E57;
   --dark-red: #EB4D3D;
   --dark-white: #FFFFFF;
@@ -52,6 +54,9 @@
   --sidebar-menu-option-icon-bg-color: var(--light-gray4);
   --tooltip-color: var(--light-white);
   --tooltip-bg-color: var(--light-gray2);
+  --embedded-box-action-color: var(--light-gray1-semi-transparent);
+  --embedded-box-action-color-hover: var(--color-primary);
+  --code-block-color: rgba(0, 0, 0, .07);
 }
 
 .dark-theme {
@@ -87,4 +92,7 @@
   --sidebar-menu-option-icon-bg-color: var(--dark-gray2);
   --tooltip-color: var(--dark-gray-text);
   --tooltip-bg-color: var(--dark-gray1);
+  --embedded-box-action-color: var(--dark-gray3-semi-transparent);
+  --embedded-box-action-color-hover: var(--color-primary);
+  --code-block-color: rgba(0, 0, 0, .15);
 }

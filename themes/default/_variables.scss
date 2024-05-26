@@ -621,7 +621,8 @@ $message-group-footer-padding: 0 !default;
 
 // Message input
 //
-$message-input-height: 4.5em !default; //##
+$message-input-height: auto !default; //##
+$message-input-min-height: 4.5em !default; //##
 
 // Borders
 $message-input-border-radius: 0.2em !default; //##
