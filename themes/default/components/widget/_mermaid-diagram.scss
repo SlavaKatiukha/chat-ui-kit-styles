@@ -1,0 +1,27 @@
+@import '../../variables';
+@import '../../helpers/mixins';
+
+.#{$widgetPrefix}-mermaid-diagram {
+  // Local alias
+  $mermaid-diagram-class: &;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    
+    // TODO: use mermaid theme instead
+    .legend, 
+    .title,
+    .pieTitleText {
+      fill: var(--color-text) !important; 
+
+      text {
+        fill: var(--color-text) !important;
+      }
+    }
+  }
+}

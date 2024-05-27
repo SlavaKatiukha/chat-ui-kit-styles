@@ -50,10 +50,10 @@
     // !!!! TODO: set to 20px when not using fancy scroll
     right: 15px; 
     background-color: $message-list-typing-indicator-bg-color;
-    padding: 0.5em 0.5em;
+    padding: 0.5em 0.5em 1.5em 6.5em; //##
     font-size: 0.9em;
-    height: 1em + (1em * 0.25);
-    line-height: 1em + (1em * 0.25);
+    height: 2em + (1em * 0.25); //##
+    line-height: 2em + (1em * 0.25); //##
   }
   
   // Because message in group cant have max-width, only if its direct child of list
