@@ -21,7 +21,7 @@ $_message-group-avatar-justify-content: flex-end;
     box-sizing: border-box;
     @include flex-column;
     justify-content: $_message-group-avatar-justify-content;
-    margin-bottom: 2.1em;
+    margin-bottom: 1.6em; //##
   }
 
   // Container for header, message and footer
@@ -115,8 +115,33 @@ $_message-group-avatar-justify-content: flex-end;
         border-radius: $message-group-incoming-message-content-single-border-radius;
       }
 
+      // Typing indicator
+      & .#{$message-class} .#{$message-class}__content .#{$prefix}-typing-indicator {
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+        height: auto;
+        line-height: 1.5em;
+        font-size: 1em;
+
+        & .#{$prefix}-typing-indicator__text {
+          margin-left: 0.5625em;  
+        }
+
+        & .#{$prefix}-typing-indicator__text:after {
+          content: '\00a0';
+          display: inline-block;
+          width: 0;
+        }
+
+        & .#{$prefix}-typing-indicator__dot {
+          border-radius: 50%;
+          margin-top: 0;
+          height: .3875em;
+          width: .3875em;
+        }
+      }
     }
-    
   }
 
   // Modifier - group of outgoing messages

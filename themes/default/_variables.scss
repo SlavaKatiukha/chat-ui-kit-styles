@@ -116,7 +116,7 @@ $avatar-box-shadow: 0px 0px 70px 12px rgb(255 255 255 / 30%); //##
 
 // Sizes
 $avatar-xs-width: 16px !default;
-$avatar-sm-width: 26px !default;
+$avatar-sm-width: 40px !default;
 $avatar-md-width: 56px !default; //##
 $avatar-lg-width: 120px !default; //##
 $avatar-fluid-width: 100% !default;
@@ -545,7 +545,7 @@ $message-font-family: $default-font-family !default;
 
 $message-content-font-family: 'Inter', sans-serif !default; //##
 $message-content-font-weight: normal !default;
-$message-content-font-size: 0.91em !default;
+$message-content-font-size: 0.875em !default;
 $message-content-font-variant: normal !default;
 
 // Sizes
@@ -621,7 +621,8 @@ $message-group-footer-padding: 0 !default;
 
 // Message input
 //
-$message-input-height: 4.5em !default; //##
+$message-input-height: auto !default; //##
+$message-input-min-height: 4.5em !default; //##
 
 // Borders
 $message-input-border-radius: 0.2em !default; //##
