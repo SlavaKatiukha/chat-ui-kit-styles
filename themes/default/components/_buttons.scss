@@ -1,7 +1,6 @@
-@import "../variables";
+@import '../variables';
 
 .#{$prefix}-button {
-
   // Local alias
   $button-class: &;
 
@@ -18,9 +17,11 @@
   outline: none;
   font-size: $button-font-size;
   line-height: $button-line-height;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:focus {
-    outline:none;
+    outline: none;
   }
 
   &:disabled {
@@ -28,7 +29,7 @@
   }
 
   &:not(:disabled) {
-    cursor:pointer;
+    cursor: pointer;
   }
 
   &#{$button-class}--border {
@@ -42,13 +43,13 @@
 
   &#{$button-class}--right {
     > svg[data-icon]:first-child {
-      margin-right:0.5em;
+      margin-right: 0.5em;
     }
   }
 
   &#{$button-class}--left {
-    >svg[data-icon]:last-child {
-      margin-left:0.5em;
+    > svg[data-icon]:last-child {
+      margin-left: 0.5em;
     }
   }
 
@@ -96,6 +97,4 @@
     color: $button-attachment-color;
     background-color: $button-attachment-bg-color;
   }
-
 }
-

@@ -1,7 +1,7 @@
 @import '../../variables';
 @import '../../helpers/mixins';
 
-.#{$widgetPrefix}-mermaid-diagram {
+.#{$widget-prefix}-mermaid-diagram {
   // Local alias
   $mermaid-diagram-class: &;
 
@@ -12,12 +12,12 @@
 
     width: 100%;
     height: 100%;
-    
+
     // TODO: use mermaid theme instead
-    .legend, 
+    .legend,
     .title,
     .pieTitleText {
-      fill: var(--color-text) !important; 
+      fill: var(--color-text) !important;
 
       text {
         fill: var(--color-text) !important;

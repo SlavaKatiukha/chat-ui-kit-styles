@@ -1,7 +1,7 @@
 @import '../../variables';
 @import '../../helpers/mixins';
 
-.#{$widgetPrefix}-maximizable-box {
+.#{$widget-prefix}-maximizable-box {
   // Local aliases
   $maximizable-box-class: &;
   $maximizable-box-button-class: #{$maximizable-box-class}__button;
@@ -73,6 +73,25 @@
     #{$maximizable-box-button-class} {
       top: 1.4em;
       right: 1.4em;
+    }
+  }
+}
+
+// Mobile Specific Styles
+
+.#{$mobile-class} {
+  $maximizable-box-class: #{$widget-prefix}-maximizable-box;
+
+  .#{$maximizable-box-class} {
+    &--maximized {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+
+      .#{$maximizable-box-class}__button {
+        display: block;
+      }
     }
   }
 }
