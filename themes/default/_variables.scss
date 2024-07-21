@@ -8,7 +8,11 @@
 $prefix: "rv" !default; //##
 
 // Main widget class prefix //##
-$widgetPrefix: "rvx" !default; //##
+$widget-prefix: "rvx" !default; //##
+
+$mobile-class: "mobile" !default; //##
+
+$touch-only-class: "touch-only" !default; //##
 
 // Grid breakpoints
 //
@@ -121,6 +125,7 @@ $avatar-md-width: 56px !default; //##
 $avatar-lg-width: 120px !default; //##
 $avatar-fluid-width: 100% !default;
 
+$avatar-lg-width-mobile: 100px !default; //##
 // Avatar group
 //
 
@@ -576,6 +581,8 @@ $message-group-message-base-radius: $default-border-radius !default;
 $message-group-incoming-message-content-border-radius: 0 $message-group-message-base-radius $message-group-message-base-radius 0 !default;
 // Border radius for single incoming message content
 $message-group-incoming-message-content-single-border-radius: $message-group-message-base-radius $message-group-message-base-radius $message-group-message-base-radius 0 !default; //##
+$message-group-incoming-message-content-single-border-radius-mobile: 0 $message-group-message-base-radius $message-group-message-base-radius $message-group-message-base-radius !default; //##
+
 // Border radius for first message content in incoming group
 $message-group-incoming-message-content-first-border-radius: 0 $message-group-message-base-radius $message-group-message-base-radius 0 !default;
 // Border radius for last message content in incoming group

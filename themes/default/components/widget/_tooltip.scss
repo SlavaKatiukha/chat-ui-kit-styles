@@ -1,23 +1,22 @@
-@import "../../variables";
-@import "../../helpers/mixins";
+@import '../../variables';
+@import '../../helpers/mixins';
 
+.#{$widget-prefix}-tooltip {
+  // Local alias
+  $tooltip-class: &;
 
-.#{$widgetPrefix}-tooltip {
-    // Local alias
-    $tooltip-class: &;
+  position: fixed;
+  background-color: var(--tooltip-bg-color);
+  color: var(--tooltip-color);
+  padding: 1.5em;
+  border-radius: 1.5em;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1000;
 
-    position: fixed;
-    background-color: var(--tooltip-bg-color);
-    color: var(--tooltip-color);
-    padding: 1.5em;
-    border-radius: 1.5em;
-    font-size: 14px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    z-index: 1000;
-  
-    // &#{&}--tr-br {
-    //     // transform: translate(0, -10px);
-    // }
+  // &#{&}--tr-br {
+  //     // transform: translate(0, -10px);
+  // }
 }

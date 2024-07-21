@@ -1,8 +1,7 @@
-@import "../variables";
-@import "../helpers/mixins";
+@import '../variables';
+@import '../helpers/mixins';
 
 .#{$prefix}-conversation-header {
-
   $class-name: &;
 
   box-sizing: border-box;
@@ -27,7 +26,7 @@
     box-sizing: border-box;
     //## margin-right:0.5em;
     margin-left: 1.6em; //##
-    margin-top: .5em; //##
+    margin-top: 0.5em; //##
     @include flex-row;
     align-items: center;
     cursor: pointer;
@@ -35,7 +34,7 @@
 
     button {
       font-size: 1.4em;
-      padding:0;
+      padding: 0;
     }
   }
 
@@ -55,7 +54,7 @@
     }
 
     .#{$prefix}-avatar-group {
-      padding-right:0 !important;
+      padding-right: 0 !important;
     }
   }
 
@@ -85,11 +84,10 @@
       color: $conversation-header-info-color;
       background-color: $conversation-header-info-bg-color;
       font-weight: normal;
-      font-size: .875em; //##
-      margin-top: .3em; //##
-      margin-left: .7em; //##
+      font-size: 0.875em; //##
+      margin-top: 0.3em; //##
+      margin-left: 0.7em; //##
     }
-
   }
 
   &__actions {
@@ -105,7 +103,7 @@
     }
 
     .#{$prefix}-button {
-      padding:0;
+      padding: 0;
     }
 
     .#{$prefix}-button.#{$prefix}-button--arrow,
@@ -115,17 +113,13 @@
     .#{$prefix}-button.#{$prefix}-button--star,
     .#{$prefix}-button.#{$prefix}-button--adduser,
     .#{$prefix}-button.#{$prefix}-button--ellipsis,
-    .#{$prefix}-button.#{$prefix}-button--ellipsis
-    {
+    .#{$prefix}-button.#{$prefix}-button--ellipsis {
       font-size: 1.4em;
-      color:$conversation-header-action-button-color;
+      color: $conversation-header-action-button-color;
       background-color: $conversation-header-action-button-bg-color;
     }
     .#{$prefix}-button.#{$prefix}-button--ellipsis {
       font-size: 1.3em;
     }
-
   }
-
-
 }

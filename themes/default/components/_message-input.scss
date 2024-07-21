@@ -107,6 +107,7 @@ $_message-input-content-editor-container-max-height: $message-input-max-lines * 
 
   &__tools {
     @include flex-row;
+    user-select: none;
     box-sizing: border-box;
     .#{$prefix}-button {
       font-size:1.2em;
