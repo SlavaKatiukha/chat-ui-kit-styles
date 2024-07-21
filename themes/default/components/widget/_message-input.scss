@@ -1,8 +1,7 @@
-@import "../../variables";
-@import "../../helpers/mixins";
+@import '../../variables';
+@import '../../helpers/mixins';
 
-.#{$widgetPrefix}-message-input {
-
+.#{$widget-prefix}-message-input {
   // Local alias
   $message-input-class: &;
 
@@ -13,25 +12,70 @@
   .#{$prefix}-message-input {
     border: none;
     flex-grow: 1;
-    padding-left: .625em;
+    padding-left: 0.625em;
     max-width: 100%;
+  }
+
+  &__recording-text {
+    // font-weight: 300;
+    // font-size: 3em;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.4);
+    // color: var(--color-text-info);
+    background: linear-gradient(to right, #222 0%, #fff 50%, #222 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    animation: shimmer 2s infinite;
+    background-repeat: no-repeat;
+    background-color: #222;
   }
 
   &__tools {
     @include flex-row;
     box-sizing: border-box;
 
-    .#{$widgetPrefix}-button__send {
+    .#{$widget-prefix}-button__send {
       position: absolute;
       width: 3.3em;
       border-radius: 50%;
       height: 3.3em;
       margin: 0.5em 0.5em 0 -4em;
       bottom: 0.6em;
-    } 
+      transition: transform 0.1s linear;
+    }
 
-    .#{$widgetPrefix}-button__send--mic-active {
+    .#{$widget-prefix}-button__send--mic-active {
       box-shadow: 1px 1px 5px var(--mic-active-border-size) var(--mic-active-shadow-color);
     }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+// Touch-only device styles
+.#{$touch-only-class} {
+  .#{$widget-prefix}-button__send--mic-active {
+    background: var(--recording-color);
+    // width: 6em;
+    // height: 6em;
+    bottom: 0.55em;
+    transform: scale(1.3);
+  }
+
+  .#{$widget-prefix}-button__send:hover:not(:disabled) {
+    color: var(--button-color);
+  }
+
+  .#{$widget-prefix}-button__send--mic-active:hover:not(:disabled) {
+    color: #fff;
   }
 }

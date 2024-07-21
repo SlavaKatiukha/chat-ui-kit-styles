@@ -1,8 +1,7 @@
-@import "../variables";
-@import "../helpers/mixins";
+@import '../variables';
+@import '../helpers/mixins';
 
 .#{$prefix}-avatar {
-
   $avatar-class: &;
 
   position: relative;
@@ -21,22 +20,21 @@
   &#{&}--xs {
     width: $avatar-xs-width;
     height: $avatar-xs-width;
-    min-width: $avatar-xs-width;;
+    min-width: $avatar-xs-width;
     min-height: $avatar-xs-width;
   }
 
   &#{&}--sm {
     width: $avatar-sm-width;
     height: $avatar-sm-width;
-    min-width: $avatar-sm-width;;
+    min-width: $avatar-sm-width;
     min-height: $avatar-sm-width;
   }
 
-  &#{&}--md
-  {
+  &#{&}--md {
     width: $avatar-md-width;
     height: $avatar-md-width;
-    min-width: $avatar-md-width;;
+    min-width: $avatar-md-width;
     min-height: $avatar-md-width;
   }
 
@@ -50,8 +48,16 @@
     box-sizing: border-box;
     border: 20px solid white;
     background: white;
-    box-shadow: 0 0 16px 0 #0000003D;
+    box-shadow: 0 0 16px 0 #0000003d;
     /*##*/
+  }
+
+  .#{$mobile-class} &#{&}--lg {
+    width: $avatar-lg-width-mobile;
+    height: $avatar-lg-width-mobile;
+    min-width: $avatar-lg-width-mobile;
+    min-height: $avatar-lg-width-mobile;
+    box-shadow: 0 0 10px 0 #0000003d;
   }
   /*##*/
   &#{&}--lg > img {
@@ -60,7 +66,7 @@
     height: 100px;
     top: -10px;
     left: -10px;
-    transition: width .1s, height .1s, margin .1s;
+    transition: width 0.1s, height 0.1s, margin 0.1s;
     margin: 0;
   }
 
@@ -72,6 +78,20 @@
       filter: none;
     }
   }
+
+  .#{$mobile-class} &#{&}--lg > img {
+    width: 84px;
+    height: 84px;
+    top: -12px;
+    left: -12px;
+  }
+
+  .#{$mobile-class} &#{&}--lg:hover {
+    > img {
+      width: 92px;
+      height: 92px;
+    }
+  }
   /*##*/
 
   &#{&}--fluid {
@@ -80,7 +100,7 @@
     .#{$prefix}-status {
       right: 5%;
       width: 22%;
-      height: 22%
+      height: 22%;
     }
   }
 
@@ -88,10 +108,10 @@
   & .#{$prefix}-status {
     box-sizing: border-box;
     position: absolute;
-    right:-1px;
+    right: -1px;
     bottom: 3%;
 
-    &__bullet  {
+    &__bullet {
       box-sizing: content-box;
       border: solid 2px #fff;
     }
@@ -101,17 +121,14 @@
 
     &--xs,
     &--xs:not(.#{$status-class}--named) {
-
-      @include status-size("xs", 1);
+      @include status-size('xs', 1);
       right: 0;
       bottom: 0;
-
     }
 
     &--sm,
     &--sm:not(.#{$status-class}--named) {
-
-      @include status-size("sm", 2);
+      @include status-size('sm', 2);
 
       right: -3px;
       bottom: -1px;
@@ -119,20 +136,16 @@
 
     &--md,
     &--md:not(.#{$status-class}--named) {
-      @include status-size("md", 2);
+      @include status-size('md', 2);
     }
 
     &--lg,
     &--lg:not(.#{$status-class}--named) {
-
-      @include status-size("lg", 2);
-      bottom:4%;
-
+      @include status-size('lg', 2);
+      bottom: 4%;
     }
-
   }
 
   &#{$avatar-class}--active {
-
   }
 }

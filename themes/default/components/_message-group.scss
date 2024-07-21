@@ -1,20 +1,20 @@
-@import "../variables";
-@import "../helpers/mixins";
-
+@import '../variables';
+@import '../helpers/mixins';
 
 // Positions
 $_message-group-avatar-justify-content: flex-end;
+$message-class: #{$prefix}-message;
 
 /********** Styles **********/
 .#{$prefix}-message-group {
-
   // Local alias
   $group-class: &;
-  $message-class: #{$prefix}-message;
+  // $message-class: #{$prefix}-message;
   $avatar-class: #{$prefix}-avatar;
 
   box-sizing: border-box;
   @include flex-row;
+
   margin: $message-group-margin;
 
   &__avatar {
@@ -32,7 +32,7 @@ $_message-group-avatar-justify-content: flex-end;
 
   &__header {
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     font-size: $message-group-header-font-size;
     font-family: $message-group-header-font-family;
     color: $message-group-header-color;
@@ -43,7 +43,7 @@ $_message-group-avatar-justify-content: flex-end;
 
   &__footer {
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     font-size: $message-group-footer-font-size;
     font-family: $message-group-footer-font-family;
     color: $message-group-footer-color;
@@ -56,7 +56,7 @@ $_message-group-avatar-justify-content: flex-end;
     box-sizing: border-box;
     // First message in group
     .#{$prefix}-message:first-child {
-      margin-top:0;
+      margin-top: 0;
     }
 
     // Every message in group
@@ -66,15 +66,13 @@ $_message-group-avatar-justify-content: flex-end;
         background: $message-group-message-content-bg-color;
         border-radius: 10px;
         /*##*/
-        margin-top:0;
+        margin-top: 0;
       }
     }
 
     // Last message in group
     .#{$prefix}-message:last-child {
-
     }
-
   }
 
   // Modifier - group of incoming messages
@@ -87,11 +85,10 @@ $_message-group-avatar-justify-content: flex-end;
     }
 
     & #{$group-class}__content {
-      order:1;
+      order: 1;
     }
 
     & #{$group-class}__messages {
-
       // First message in incoming group
       & .#{$message-class}:first-child .#{$message-class}__content {
         border-radius: $message-group-incoming-message-content-first-border-radius;
@@ -125,7 +122,7 @@ $_message-group-avatar-justify-content: flex-end;
         font-size: 1em;
 
         & .#{$prefix}-typing-indicator__text {
-          margin-left: 0.5625em;  
+          margin-left: 0.5625em;
         }
 
         & .#{$prefix}-typing-indicator__text:after {
@@ -137,15 +134,19 @@ $_message-group-avatar-justify-content: flex-end;
         & .#{$prefix}-typing-indicator__dot {
           border-radius: 50%;
           margin-top: 0;
-          height: .3875em;
-          width: .3875em;
+          height: 0.3875em;
+          width: 0.3875em;
         }
       }
     }
   }
 
+  /*.mobile .#{$prefix}-message:only-child .#{$message-class}__content {
+    border-radius: $message-group-incoming-message-content-single-border-radius-mobile;
+  }*/
+
   // Modifier - group of outgoing messages
-  &--outgoing  {
+  &--outgoing {
     justify-content: flex-end;
     margin-left: auto;
 
@@ -155,11 +156,10 @@ $_message-group-avatar-justify-content: flex-end;
     }
 
     & #{$group-class}__content {
-      order:0;
+      order: 0;
     }
 
     & #{$group-class}__messages {
-
       & .#{$message-class} {
         justify-content: flex-end;
       }
@@ -186,7 +186,6 @@ $_message-group-avatar-justify-content: flex-end;
       .#{$prefix}-message:only-child .#{$message-class}__content {
         border-radius: $message-group-outgoing-message-content-single-border-radius;
       }
-
     }
   }
 
@@ -194,83 +193,102 @@ $_message-group-avatar-justify-content: flex-end;
   // By default incoming and default message has avatar on left and outgoing has avatar on right.
   // This can be changed by adding --avatar-left or avatar-right modifier
   &--avatar-tl {
-
     #{$group-class}__avatar {
       justify-content: flex-start;
-      order:0;
+      order: 0;
       margin-right: $message-group-avatar-horizontal-margin;
-      margin-left:0;
+      margin-left: 0;
     }
 
     #{$group-class}__content {
-      order:1;
+      order: 1;
     }
   }
 
   &--avatar-tr {
     #{$group-class}__avatar {
       justify-content: flex-start;
-      order:1;
+      order: 1;
       margin-left: $message-group-avatar-horizontal-margin;
-      margin-right:0;
+      margin-right: 0;
     }
 
     #{$group-class}__content {
-      order:0;
+      order: 0;
     }
   }
 
   &--avatar-bl {
     #{$group-class}__avatar {
       justify-content: flex-end;
-      order:0;
+      order: 0;
       margin-right: $message-group-avatar-horizontal-margin;
-      margin-left:0;
+      margin-left: 0;
     }
 
     #{$group-class}__content {
-      order:1;
+      order: 1;
     }
   }
 
   &--avatar-br {
     #{$group-class}__avatar {
       justify-content: flex-end;
-      order:1;
+      order: 1;
       margin-left: $message-group-avatar-horizontal-margin;
-      margin-right:0;
+      margin-right: 0;
     }
 
     #{$group-class}__content {
-      order:0;
+      order: 0;
     }
   }
 
   &--avatar-cl {
-
     #{$group-class}__avatar {
       justify-content: center;
-      order:0;
+      order: 0;
       margin-right: $message-group-avatar-horizontal-margin;
-      margin-left:0;
+      margin-left: 0;
     }
 
     #{$group-class}__content {
-      order:1;
+      order: 1;
     }
   }
 
   &--avatar-cr {
     #{$group-class}__avatar {
       justify-content: center;
-      order:1;
+      order: 1;
       margin-left: $message-group-avatar-horizontal-margin;
-      margin-right:0;
+      margin-right: 0;
     }
 
     #{$group-class}__content {
-      order:0;
+      order: 0;
     }
   }
-
 }
+
+// Mobile Specific Styles
+
+.#{$mobile-class} {
+  $group-class: #{$prefix}-message-group;
+
+  .#{$group-class} {
+    @include flex-column;
+
+    &--incoming {
+      & .#{$group-class}__messages {
+        .#{$prefix}-message:only-child .#{$message-class}__content {
+          border-radius: $message-group-incoming-message-content-single-border-radius-mobile;
+        }
+      }
+    }
+
+    &__avatar {
+      margin-bottom: 1em;
+    }
+  }
+} 
