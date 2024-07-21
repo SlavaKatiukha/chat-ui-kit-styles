@@ -1,5 +1,26 @@
 @import "../variables";
 
+.#{$mobile-class} {
+  $message-class: #{$prefix}-message;
+
+  .#{$prefix}-message {
+    &__content-wrapper {
+      padding-top: 0;
+    }
+
+    &__footer {
+      font-size: 0.875em;
+    }
+
+    &.#{$message-class}--incoming {
+      & .#{$message-class}__content-wrapper {
+        margin-left: 0;
+      }
+    }
+  }
+}
+///
+
 $_message-avatar-justify-content: flex-end;
 
 // How far message avatar should be postponed from message (and message from avatar for outgoing)
