@@ -86,7 +86,8 @@
       font-weight: normal;
       font-size: 0.875em; //##
       margin-top: 0.3em; //##
-      margin-left: 0.7em; //##
+      // margin-left: .7em; //##
+      margin-left: 47px;
     }
   }
 
@@ -98,7 +99,7 @@
     background-color: $conversation-header-actions-bg-color;
     margin: $conversation-header-actions-margin;
     order: 4;
-    .#{$prefix}-button:not(:first-child) {
+    > :not(:first-child) {
       margin-left: 1.5625em; //##
     }
 
@@ -121,5 +122,15 @@
     .#{$prefix}-button.#{$prefix}-button--ellipsis {
       font-size: 1.3em;
     }
+  }
+}
+
+.#{$live-mode-class}.#{$maximized-class} {
+  .#{$prefix}-conversation-header {
+    &__actions {
+      > :not(:first-child) {
+        margin-left: 2.1875em;
+      }
+    }  
   }
 }

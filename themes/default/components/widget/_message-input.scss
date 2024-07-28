@@ -79,3 +79,24 @@
     color: #fff;
   }
 }
+
+.#{$live-mode-class}.#{$maximized-class} {
+  .#{$widget-prefix}-message-input {
+    padding: 2em;
+    background: var(--default-bg-color);
+
+    .#{$prefix}-message-input {
+      border-radius: 2.375em;
+
+      &__content-editor[data-placeholder]:empty:before {
+        line-height: 1.6875em;
+      }
+    }
+
+    &__tools {
+      .#{$widget-prefix}-button__send {
+        bottom: 2.5em;    
+      }
+    }
+  }
+}

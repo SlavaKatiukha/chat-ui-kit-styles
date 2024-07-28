@@ -1,0 +1,44 @@
+@import '../../variables';
+@import '../../helpers/mixins';
+
+.#{$widget-prefix}-layout-switch {
+  // Local alias
+  $layout-switch-class: &;
+
+  display: inline-flex;
+
+  &__separator {
+    width: 2px;
+    height: 1.5em;
+    background: var(--separator-bg-color);
+    margin: -2px 1.0625em 0 1.0625em;
+  }
+
+  &__left,
+  &__right {
+    cursor: pointer;
+    margin: 0 !important;
+
+    &--active {
+      cursor: default !important;
+      color: var(--button-active-color);
+    }
+  }
+
+  &__on,
+  &__off {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    height: 24px;
+    min-width: 64px;
+    text-align: center;
+
+    &--active {
+      cursor: default;
+      color: var(--layout-switch-bg-color);
+      background-color: var(--layout-switch-active-bg-color);
+      border-radius: 40px;
+    }
+  }
+}
