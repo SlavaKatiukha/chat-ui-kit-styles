@@ -266,6 +266,7 @@ $_message-avatar-offset: $message-avatar-width + $message-avatar-horizontal-marg
     }
 
     & #{$message-class}__content-wrapper {
+      margin-bottom: $message-incoming-first-margin-bottom;
     }
 
     & #{$message-class}__sender-name {
