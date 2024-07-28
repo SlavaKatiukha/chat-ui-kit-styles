@@ -24,7 +24,12 @@
     min-width: 64px;
     text-align: center;
 
-    &--active {
+    &:hover {
+      color: var(--button-active-color);
+    }
+
+    &--active,
+    &--active:hover {
       cursor: default;
       color: var(--switch-bg-color);
       background-color: var(--switch-active-bg-color);
