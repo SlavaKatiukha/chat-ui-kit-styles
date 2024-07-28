@@ -83,7 +83,12 @@
 .#{$live-mode-class}.#{$maximized-class} {
   .#{$widget-prefix}-message-input {
     padding: 2em;
-    background: var(--default-bg-color);
+    background-color: var(--default-bg-color);
+
+    &--recording {
+      background-color: $message-input-bg-color;
+      padding-left: 0;
+    }
 
     .#{$prefix}-message-input {
       border-radius: 2.375em;
@@ -95,7 +100,7 @@
 
     &__tools {
       .#{$widget-prefix}-button__send {
-        bottom: 2.5em;    
+        bottom: 2.5em;
       }
     }
   }
