@@ -12,6 +12,7 @@ $widget-prefix: 'rvx' !default; //##
 
 // body casses
 $live-mode-class: '#{$widget-prefix}-live-mode' !default; //##
+$live-mode-min-class: '#{$widget-prefix}-live-mode--minimized' !default; //##
 $maximized-class: '#{$widget-prefix}-maximized' !default; //##
 $mobile-class: 'mobile' !default; //##
 $touch-only-class: 'touch-only' !default; //##
