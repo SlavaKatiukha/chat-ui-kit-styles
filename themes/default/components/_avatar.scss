@@ -60,17 +60,20 @@
     box-shadow: 0 0 10px 0 #0000003d;
   }
   /*##*/
-  &#{&}--lg > img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: -10px;
-    left: -10px;
-    transition: width 0.1s, height 0.1s, margin 0.1s;
-    margin: 0;
+  &#{&}--lg {
+    > img {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: -10px;
+      left: -10px;
+      transition: width 0.1s, height 0.1s, margin 0.1s;
+      margin: 0;
+    }
   }
 
-  &#{&}--lg:hover {
+  &#{&}--lg:hover,
+  &.#{$prefix}-loader {
     > img {
       width: 108px;
       height: 108px;
@@ -79,14 +82,17 @@
     }
   }
 
-  .#{$mobile-class} &#{&}--lg > img {
-    width: 84px;
-    height: 84px;
-    top: -12px;
-    left: -12px;
+  .#{$mobile-class} &#{&}--lg {
+    > img {
+      width: 84px;
+      height: 84px;
+      top: -12px;
+      left: -12px;
+    }
   }
 
-  .#{$mobile-class} &#{&}--lg:hover {
+  .#{$mobile-class} &#{&}--lg:hover,
+  .#{$mobile-class} &.#{$prefix}-loader {
     > img {
       width: 92px;
       height: 92px;
