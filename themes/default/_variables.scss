@@ -22,7 +22,7 @@ $touch-only-class: 'touch-only' !default; //##
 // Breakpoints for responsive view
 
 $grid-breakpoints: (
-  xs: 0,
+  xs: 380px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -123,7 +123,7 @@ $avatar-box-shadow: 0px 0px 70px 12px rgb(255 255 255 / 30%); //##
 // Sizes
 $avatar-xs-width: 16px !default;
 $avatar-sm-width: 40px !default;
-$avatar-md-width: 56px !default; //##
+$avatar-md-width: 48px !default; //##
 $avatar-lg-width: 120px !default; //##
 $avatar-fluid-width: 100% !default;
 
@@ -386,13 +386,13 @@ $input-toolbox-padding: 0 0 0.4em 0 !default;
 //
 
 // Borders
-$loader-border-width: 0.2em !default;
+$loader-border-width: 0.1em !default;
 
 // Colors
 $loader-color: $color-text !default;
 $loader-bg-color: transparent !default;
-$loader-spinner-color: $color-primary-dark !default;
-$loader-spinner-bg-color: $color-primary !default;
+$loader-spinner-color: var(--dark-red) !default;
+$loader-spinner-bg-color: transparent !default;
 
 // Sizes
 $loader-width: 1.8em !default;

@@ -7,7 +7,7 @@
 
   @include flex-row;
   background-color: $message-input-bg-color;
-  overflow: hidden;
+  overflow: visible;
 
   .#{$prefix}-message-input {
     border: none;

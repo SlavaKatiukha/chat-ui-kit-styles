@@ -16,15 +16,23 @@
   color: var(--switch-active-bg-color);
   margin-bottom: 0.4em;
 
+  &__on {
+    min-width: 56px;
+  }
+
+  &__off {
+    min-width: 64px;
+  }
+
   &__on,
   &__off {
     cursor: pointer;
     display: inline-block;
     line-height: 24px;
     height: 24px;
-    min-width: 64px;
     text-align: center;
-
+    font-size: 0.875em;
+    
     &:hover {
       color: var(--button-active-color);
     }

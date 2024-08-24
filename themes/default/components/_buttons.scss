@@ -32,7 +32,7 @@
     cursor: pointer;
   }
 
-  /*rewrite*/
+/*rewrite*/
   &#{$button-class}--mini {
     color: var(--dark-gray2);
     background-color: var(--dark-white);
@@ -56,7 +56,11 @@
       transform-origin: center;
     }
   }
-  /*revrite*/
+
+  &#{$button-class}--light {
+    color: var(--dark-white);
+  }
+/*rewrite*/
 
   &#{$button-class}--border {
     border: $button-border;
