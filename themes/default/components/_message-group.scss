@@ -141,6 +141,12 @@ $message-class: #{$prefix}-message;
     }
   }
 
+  &--typing {
+    & #{$group-class}__avatar {
+      margin-bottom: 0;
+    }
+  }
+
   /*.mobile .#{$prefix}-message:only-child .#{$message-class}__content {
     border-radius: $message-group-incoming-message-content-single-border-radius-mobile;
   }*/
