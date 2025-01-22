@@ -63,6 +63,14 @@
 
 // Touch-only device styles
 .#{$touch-only-class} {
+  .#{$widget-prefix}-message-input {
+    .#{$prefix}-message-input {
+      &__content-editor-container {
+        font-size: 1em;
+      }
+    }
+  }
+
   .#{$widget-prefix}-button__send--mic-active {
     background: var(--recording-color);
     // width: 6em;
