@@ -54,7 +54,22 @@
     padding-top: $loader-height + 0.8em;
   }
 
-  // Variant or future use
+  &--variant-center-medium {
+    font-size: 1.5em;
+
+    &::before,
+    &::after {
+      top: 50%;
+      margin: (math.div($loader-height, 2) - 1.5) 0 0 (math.div($loader-width, 2) * -1);
+    }
+
+    &::after {
+      animation: loader-default 1s linear;
+      animation-iteration-count: infinite;
+      border-color: $loader-spinner-color transparent transparent transparent;
+    }
+  }
+
   &--variant-center-large {
     font-size: 2.2em;
 
