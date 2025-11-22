@@ -60,6 +60,8 @@
   --code-block-color: rgba(0, 0, 0, 0.07);
   --switch-bg-color: var(--light-white);
   --switch-active-bg-color: var(--dark-gray3);
+  --audio-bar-bg-color: var(--light-gray4);
+  --audio-bar-active-bg-color: var(--light-gray2);
 }
 
 .dark-theme {
@@ -101,4 +103,6 @@
   --code-block-color: rgba(0, 0, 0, 0.15);
   --switch-bg-color: var(--dark-gray3);
   --switch-active-bg-color: var(--dark-white);
+  --audio-bar-bg-color: var(--dark-gray3);
+  --audio-bar-active-bg-color: var(--dark-white);
 }

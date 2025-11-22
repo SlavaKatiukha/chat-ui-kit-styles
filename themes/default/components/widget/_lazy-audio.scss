@@ -83,7 +83,7 @@
   .progress-bar {
     box-sizing: border-box;
     position: relative;
-    background-color: var(--dark-gray4, #e0e0e0);
+    background-color: var(--audio-bar-bg-color);
     width: 100%;
     min-width: 180px;
     height: 4px;
@@ -96,7 +96,7 @@
       top: 0;
       left: 0;
       height: 100%;
-      background-color: #333;
+      background-color: var(--audio-bar-active-bg-color);
       transition: width 0.1s linear;
       border-radius: 2px;
       pointer-events: none; // Allow clicks to pass through to parent
