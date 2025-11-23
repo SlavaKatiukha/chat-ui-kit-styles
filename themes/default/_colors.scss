@@ -48,6 +48,8 @@
   --recording-duration-color: var(--light-gray2);
   --mic-active-shadow-color: rgba(0, 0, 0, 0.1);
   --mic-leave-shadow-color: rgba(235, 77, 61, 0.7);
+  --mic-vad-color: #1ba74b;
+  --mic-vad-shadow-color: rgba(27, 167, 75, 0.2);
   --sidebar-menu-bg-color: var(--light-white);
   --sidebar-menu-item-color: var(--light-gray2);
   --sidebar-menu-item-bg-color: var(--light-gray1);
@@ -91,6 +93,8 @@
   --recording-duration-color: var(--dark-white);
   --mic-active-shadow-color: rgba(255, 255, 255, 0.1);
   --mic-leave-shadow-color: rgba(235, 77, 61, 0.7);
+  --mic-vad-color: #1ba74b;
+  --mic-vad-shadow-color: rgba(27, 167, 75, 0.2);
   --sidebar-menu-bg-color: var(--dark-gray1);
   --sidebar-menu-item-color: var(--light-white);
   --sidebar-menu-item-bg-color: var(--dark-gray2);
