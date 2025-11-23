@@ -88,7 +88,7 @@
     min-width: 180px;
     height: 4px;
     border-radius: 2px;
-    overflow: hidden;
+    overflow: visible; // Allow thumb to extend beyond bar
     cursor: pointer; // Allow clicking on progress bar
 
     .progress {
@@ -102,6 +102,32 @@
       // Smooth transition between requestAnimationFrame updates for continuous motion
       transition: width 50ms linear;
       will-change: width; // Optimize for animation performance
+      position: relative;
+
+      // Disable transition when dragging for immediate feedback
+      &.dragging {
+        transition: none;
+      }
+
+      // Thumb circle
+      .progress-thumb {
+        position: absolute;
+        top: 50%;
+        right: -6px; // Position at the end of progress bar (offset by radius)
+        width: 12px;
+        height: 12px;
+        background-color: var(--audio-bar-active-bg-color);
+        border-radius: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    // Show thumb on hover
+    &.hovering .progress .progress-thumb {
+      opacity: 1;
     }
   }
 
