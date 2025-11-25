@@ -74,6 +74,7 @@
       @include text-truncate;
       font-weight: 600; //##
       font-size: 1.125em; //##
+      margin-bottom: 0.2em; //##
       color: $conversation-header-user-name-color;
       background-color: $conversation-header-user-name-bg-color;
     }
@@ -86,7 +87,8 @@
       font-weight: normal;
       font-size: 0.875em; //##
       margin-top: 0.3em; //##
-      margin-left: 0.7em; //##
+      // margin-left: .7em; //##
+      margin-left: 60px;
     }
   }
 
@@ -98,7 +100,12 @@
     background-color: $conversation-header-actions-bg-color;
     margin: $conversation-header-actions-margin;
     order: 4;
-    .#{$prefix}-button:not(:first-child) {
+    
+    > :first-child {
+      margin-right: 0.4375em; //##
+    }
+
+    > :not(:first-child) {
       margin-left: 1.5625em; //##
     }
 
@@ -120,6 +127,48 @@
     }
     .#{$prefix}-button.#{$prefix}-button--ellipsis {
       font-size: 1.3em;
+    }
+  }
+}
+
+.#{$live-mode-class}.#{$maximized-class} {
+  .#{$prefix}-conversation-header {
+    &__actions {
+      > :not(:first-child) {
+        margin-left: 2.1875em;
+      }
+    }
+  }
+}
+
+// Mobile Specific Styles
+
+.#{$mobile-class} {
+  .#{$prefix}-conversation-header {
+    &__back,
+    &__content {
+      margin-left: 1.125em;
+    }
+
+    &__content {
+      .#{$prefix}-conversation-header__user-name {
+        font-size: 1em;
+      }
+
+      .#{$prefix}-conversation-header__info {
+        width: 0;
+        margin-left: 0;
+      }
+
+      .#{$prefix}-conversation-header__actions {
+        margin: 0.2em 1em 0 0.375em;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, xs)) {
+      .#{$prefix}-conversation-header__user-name {
+        width: 0;
+      }
     }
   }
 }

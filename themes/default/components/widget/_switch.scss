@@ -1,0 +1,48 @@
+@import '../../variables';
+@import '../../helpers/mixins';
+
+.#{$widget-prefix}-switch {
+  // Local alias
+  $switch-class: &;
+  $border-radius: 40px;
+
+  display: inline-flex;
+  height: 24px;
+  line-height: 24px;
+  font-weight: 600;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+  background-color: var(--switch-bg-color);
+  color: var(--switch-active-bg-color);
+  margin-bottom: 0.4em;
+
+  &__on {
+    min-width: 56px;
+  }
+
+  &__off {
+    min-width: 64px;
+  }
+
+  &__on,
+  &__off {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    height: 24px;
+    text-align: center;
+    font-size: 0.875em;
+    
+    &:hover {
+      color: var(--button-active-color);
+    }
+
+    &--active,
+    &--active:hover {
+      cursor: default;
+      color: var(--switch-bg-color);
+      background-color: var(--switch-active-bg-color);
+      border-radius: $border-radius;
+    }
+  }
+}

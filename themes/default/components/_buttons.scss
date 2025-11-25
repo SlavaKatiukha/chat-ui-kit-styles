@@ -32,6 +32,36 @@
     cursor: pointer;
   }
 
+/*rewrite*/
+  &#{$button-class}--mini {
+    color: var(--dark-gray2);
+    background-color: var(--dark-white);
+    box-shadow: 0px 0px 8px rgba(36, 39, 44, 0.08);
+    transition: background-color 0.1s ease;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover:not(:disabled) {
+      color: var(--dark-white);
+      background-color: var(--dark-gray2);
+    }
+
+    svg {
+      transform: scale(0.9165);
+      transform-origin: center;
+    }
+  }
+
+  &#{$button-class}--light {
+    color: var(--dark-white);
+  }
+/*rewrite*/
+
   &#{$button-class}--border {
     border: $button-border;
   }

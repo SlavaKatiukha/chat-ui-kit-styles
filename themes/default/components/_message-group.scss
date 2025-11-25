@@ -22,6 +22,7 @@ $message-class: #{$prefix}-message;
     @include flex-column;
     justify-content: $_message-group-avatar-justify-content;
     margin-bottom: 1.6em; //##
+    @include unselectable; //##
   }
 
   // Container for header, message and footer
@@ -42,6 +43,8 @@ $message-class: #{$prefix}-message;
   }
 
   &__footer {
+    @include unselectable;
+
     box-sizing: border-box;
     display: flex;
     font-size: $message-group-footer-font-size;
@@ -138,6 +141,12 @@ $message-class: #{$prefix}-message;
           width: 0.3875em;
         }
       }
+    }
+  }
+
+  &--typing {
+    & #{$group-class}__avatar {
+      margin-bottom: 0;
     }
   }
 
@@ -291,4 +300,4 @@ $message-class: #{$prefix}-message;
       margin-bottom: 1em;
     }
   }
-} 
+}

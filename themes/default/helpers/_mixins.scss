@@ -36,7 +36,7 @@
 }
 
 // Mixins for status size
-// 
+//
 
 $bullet-class: #{$prefix}-status__bullet;
 
@@ -97,19 +97,33 @@ $status-font-sizes: (
   $element-width: map_get($status-sizes, $size) + 2*$border-width;
   $bullet-width: $element-width - 2*$border-width;
   font-size: map_get($status-font-sizes, $size);
-  
+
   @if ( $named == false ) {
     width: $element-width;
     height: $element-width;
   } @else {
     width: auto;
     height: auto;
-  } 
-  
+  }
+
   .#{$bullet-class} {
     width: $bullet-width;
     min-width: $bullet-width;
     height: $bullet-width;
   }
-  
+
+}
+
+@mixin unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: none;
+}
+
+// todo: move to another file
+.rvx-unselectable {
+  @include unselectable;
 }

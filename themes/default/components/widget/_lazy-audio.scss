@@ -1,0 +1,142 @@
+@import '../../variables';
+
+.audio-container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .custom-audio-player {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    width: 100%;
+  }
+
+  .progress-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5em;
+    // Shift the entire wrapper up to center progress bar with button
+    margin-top: 20px;
+  }
+
+  // Play/Pause Button
+  .play-button {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    position: relative;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; // Prevent button from shrinking
+
+    &:hover {
+      background-color: #444;
+    }
+
+    // Play Triangle (using CSS border trick)
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 12px solid white;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      margin-left: 3px;
+    }
+
+    // Pause Bars (using pseudo-elements)
+    &.playing {
+      &::before {
+        width: 3px;
+        height: 16px;
+        background: white;
+        border: none;
+        margin: 0;
+        border-radius: 2px;
+      }
+
+      &::after {
+        content: '';
+        width: 3px;
+        height: 16px;
+        background: white;
+        margin-left: 5px;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  // Progress Bar
+  .progress-bar {
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--audio-bar-bg-color);
+    width: 100%;
+    min-width: 180px;
+    height: 4px;
+    border-radius: 2px;
+    overflow: visible; // Allow thumb to extend beyond bar
+    cursor: pointer; // Allow clicking on progress bar
+
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--audio-bar-active-bg-color);
+      border-radius: 2px;
+      pointer-events: none; // Allow clicks to pass through to parent
+      // Smooth transition between requestAnimationFrame updates for continuous motion
+      transition: width 50ms linear;
+      will-change: width; // Optimize for animation performance
+      position: relative;
+
+      // Disable transition when dragging for immediate feedback
+      &.dragging {
+        transition: none;
+      }
+
+      // Thumb circle
+      .progress-thumb {
+        position: absolute;
+        top: 50%;
+        right: -6px; // Position at the end of progress bar (offset by radius)
+        width: 12px;
+        height: 12px;
+        background-color: var(--audio-bar-active-bg-color);
+        border-radius: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    // Show thumb on hover
+    &.hovering .progress .progress-thumb {
+      opacity: 1;
+    }
+  }
+
+  // Time Display
+  .time-display {
+    box-sizing: border-box;
+    font-size: 0.875em;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--color-text-info);
+  }
+}
